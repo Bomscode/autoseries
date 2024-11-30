@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <img src = "back.png" style = "position : absolute ; top : 0; left : 0;">
+    <div class = "bod">
+        <p>How to use</p>
+        <div><p>watch and detect</p><img class = "tutorial" src = "tut1.png"></div>
+        <div><p>remove lists</p><img class = "tutorial" src = "tut2.gif"></div>
+        <p>note 1 : this uses tab title to track series (does not work on webpage without titles/with unusual titles)</p>
+        <p>note 2 : you have to manually remove the series after you finish the series by rightclicking it (it cant detect the last episode or when u finish it)<p>
+    </div>
+    <script type="module" src="guide.js"></script>
+</body>
+</html>
+<style>
+    .page{
+        display : none;
+        justify-content : center;
+        align-items: flex-start;
+        flex-direction: column;
+        position : absolute;
+        top : 30px;
+        left :0;
+        height : 246px;
+        width : 320px;
+    }
+    .tutorial{
+        width : 200px;
+        object-fit: contain;
+    }
+    ::-webkit-scrollbar{
+        display : none;
+    }
+    img[src="back.png"]{
+        transition: 0.5s;
+        height: 25px;
+        width: 25px;
+        padding: 5px;
+        position: absolute;
+        margin: 2px;
+        object-fit: contain;
+    }
+    img[src="back.png"]:hover{
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.509) ;
+    }
+    .bod{
+        display : flex;
+        flex-direction : column;
+        align-items: center;
+        position : absolute;
+        overflow-y: scroll;
+        top : 40px;
+        left : 0;
+        height : 276px;
+        width : 320px;
+        color : white;
+        background-color : var(--bg);
+    }
+    body{
+        display : block;
+        height : 300px;
+        width : 300px;
+        background-color: var(--main) ;
+    } 
+</style>

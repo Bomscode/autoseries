@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <img src = "back.png" style = "position : absolute ; top : 0; left : 0;">
+    <div class = "bod">
+      <div style = "margin-right : 2%;">
+            <button data = "trigger" class="button" style = "justify-content: center" id = "customise">customise</button>
+        </div>
+        <div style = "margin-right : 2%; top : 2%;">
+            <button data = "trigger" class="button" style = "justify-content: center;" id = "import">import</button>
+        </div>  
+        <div style = "margin-right : 2%; top : 2%;">
+            <button data = "trigger" class="button" style = "justify-content: center;" id = "export">export</button>
+        </div>
+        <div class = "page" id = "customisepage" style = "display : flex">
+            <div style = "margin : 10px">
+                <input name = "main" type = "color">
+                main color
+            </div>
+            <div style = "margin : 10px">
+                <input name = "sub" type = "color">
+                sub color
+            </div>
+            <div style = "margin : 10px">
+                <input name = "bg" type = "color">
+                background color
+            </div>
+            <button class = "but" id = "reset">reset</button>
+            <button class = "but" id = "savecolor">save</button>
+        </div>
+        <div class = "page" id = "importpage">
+            <p stlye = "color : red">warning : importing data files will clear the current data, consider exporting first</p>
+            <label for="importbut" class="but">
+                import
+            </label>
+            <input style = "display : none" id = "importbut" type = "file">
+        </div>
+        <div class = "page" id = "exportpage">
+            <div style = "margin : 10px">
+                <input type = "checkbox" value = "url">include url
+            </div>
+            <div style = "margin : 10px">
+                <input type = "checkbox" value = "ongoing">include current 
+            </div>
+            <div style = "margin : 10px">
+                <input type = "checkbox" value = "history">include history
+            </div>
+            <button class = "but" id = "exportbut" type = "file">export</button>
+        </div>
+    </div>
+    <script type="module" src="settings.js"></script>
+</body>
+</html>
+<style>
+    .page{
+        display : none;
+        justify-content : center;
+        align-items: flex-start;
+        flex-direction: column;
+        position : absolute;
+        top : 30px;
+        left :0;
+        height : 246px;
+        width : 320px;
+    }
+    img{
+        transition: 0.5s;
+        height: 25px;
+        width: 25px;
+        padding: 5px;
+        position: absolute;
+        margin: 2px;
+        object-fit: contain;
+    }
+    img:hover{
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.509) ;
+    }
+    .bod{
+        display : flex;
+        flex-direction : row;
+        justify-content: center;
+        position : absolute;
+        top : 40px;
+        left : 0;
+        height : 276px;
+        width : 320px;
+        color : white;
+        background-color : var(--bg);
+    }
+    body{
+        display : block;
+        height : 300px;
+        width : 300px;
+        background-color: var(--main) ;
+    }   
+    .button{
+        transition: 0.2s;
+        margin-top : 2%;
+        display : flex;
+        overflow : hidden;
+        flex-direction : row;
+        align-items: center;
+        font-size: 15px;
+        border-radius: 2px;
+        padding : 5px;
+        background-color: rgba(0, 0, 0, 0);
+        border : none;
+        border-bottom: 1px solid var(--sub);
+        color : var(--sub);
+        width : 100px;
+        height : 30px;
+    }
+    .button:hover, .but:hover{
+        background-color: var(--main) ;
+    }
+    .but{
+        transition: 0.2s;
+        display : flex;
+        align-items: center;
+        justify-content: center;
+        margin : 10px;
+        width : 50px;
+        height : 20px;
+        border-radius: 20px;
+        background-color: transparent;
+        border : none;
+        border: 1px solid var(--sub);
+        color : var(--sub);
+    }
+</style>

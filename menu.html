@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <img src = "settings.png" height = "25px" style = "left : 0"><p style = "position : absolute ; top : 30px; left : 10px">settings</p>
+    <img src = "guide.png" height = "25px" style = "right : 0"><p style = "position : absolute ; top : 30px; right : 12px">guide</p>
+    <div id = "contextmenu">
+        <div id = "remove">remove</div>
+    </div>
+    <div class = "bod">
+        <div id = "historydate" class = "button" style = "width : 170px; height : 20px; background-color :#000000;color: var(--sub);border-radius: 5px;border : none;"></div>
+        <div id = "currentinfo" class = "button" style = "width : 170px; height : auto; background-color :#000000;color: var(--sub);border-radius: 5px; border : none;"></div>
+        <div style = "margin-right : 2%;">
+            <button class="button" style = "justify-content: center;" id = "sites">sites</button>
+            <div id = "sitesdropdown">
+                <button id = "addsites" class = "button" style = "font-size : 10px">add current site</button>
+            </div>
+        </div>
+        <div style = "margin-right : 2%; top : 2%;">
+            <button class="button" style = "justify-content: center;" id = "current">current</button>
+            <div id = "currentdropdown"></div>
+        </div>  
+        <div style = "margin-right : 2%; top : 2%;">
+            <button class="button" style = "justify-content: center;" id = "history">history</button>
+            <div id = "historydropdown"></div>
+        </div>
+        <script type = "module" src="menu.js"></script>
+    </div>
+</body>
+</html>
+<style>
+    img{
+        transition: 0.5s;
+        padding : 5px;
+        position : absolute;
+        top : 0;
+        margin : 10px;
+        object-fit : contain;
+        filter: hue-rotate(200deg) saturate(1.2) brightness(1.1);
+    }
+    img:hover{
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.509) ;
+    }
+    #historydate, #currentinfo{
+        display : none;
+        position : absolute; 
+        font-size : 10px;
+        flex-direction : row;
+        align-items: center;
+        justify-content : center;
+        transition : 0.2s;
+        width : 200px;
+        height : 60px;
+    }
+    #contextmenu{
+        z-index : 10;
+        position : absolute;
+        display : none;
+        flex-direction : column;
+    }
+    *{
+        font-family: 'Courier Prime', 'Arial', sans-serif;
+    }
+    #contextmenu > *{
+        padding : 10px;
+        font-size: 10px;
+        width : 50px;
+        height : 20px;
+        color : var(--sub);
+        background-color : rgb(0, 0, 0);
+        display : none;
+        justify-content : center;
+        align-items : center;
+        border : none;
+        border-radius: 5px;
+    }
+    #contextmenu > *:hover{
+        background-color : rgb(91, 91, 91);
+    }
+    #sitesdropdown, #currentdropdown, #historydropdown{
+        max-height : 215px;
+        overflow-y: scroll;
+        display : none;
+    }
+    ::-webkit-scrollbar{
+        display : none;
+    }
+    .bod{
+        display : flex;
+        flex-direction : row;
+        align-items: top;
+        justify-content: center;
+        position : absolute;
+        top : 22%;
+        left : 0;
+        height : 247px;
+        width : 320px;
+        background-color : var(--bg);
+    }
+    body{
+        display : block;
+        height : 300px;
+        width : 300px;
+        background-color: var(--main);
+    }   
+    .button{
+        transition: 0.2s;
+        margin-top : 2%;
+        text-overflow : ellipsis;
+        overflow : hidden;
+        font-size: 15px;
+        border-radius: 2px;
+        padding : 5px;
+        background-color: rgba(0, 0, 0, 0);
+        border : none;
+        border-bottom: 1px solid var(--sub);
+        color : var(--sub);
+        width : 100px;
+        height : 30px;
+    }
+    .button:hover{
+        background-color: var(--main);
+    }
+</style>
